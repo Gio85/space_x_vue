@@ -4,7 +4,8 @@
 [![code style: eslint](https://img.shields.io/badge/lintener-eslint-yellowgreen)](https://github.com/eslint/eslint)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![!react](https://img.shields.io/badge/framework-vue-green)](https://github.com/vuejs/vue)
-[![ui library: ant design](https://img.shields.io/badge/ui%20library-Vuetify-blue)](https://github.com/ant-design/ant-design)
+[![ui library: ant design](https://img.shields.io/badge/state_managment-Vuex-9fc)](https://github.com/vuejs/vuex)
+[![ui library: ant design](https://img.shields.io/badge/ui%20library-Vuetify-blue)](https://github.com/vuetifyjs/vuetify)
 [![deploy: gh pages](https://img.shields.io/badge/deploy-ghPages-black)](https://github.com/tschaub/gh-pages)
 
 This is a side project built with Vue2 with Vuetify as framework using the [SpaceX API](https://github.com/r-spacex/SpaceX-API)
