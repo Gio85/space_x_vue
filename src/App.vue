@@ -27,7 +27,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color='blue'>
+    <v-app-bar app color="blue">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>SpaceX</v-toolbar-title>
     </v-app-bar>
@@ -35,11 +35,17 @@
     <v-main>
       <router-view></router-view>
     </v-main>
+    <Footer/>
   </v-app>
+
 </template>
 
 <script>
+import Footer from '@/components/app/Footer'
 export default {
+  components: {
+    Footer
+  },
   data: () => ({
     drawer: null,
     items: [
