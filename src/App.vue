@@ -50,9 +50,9 @@ export default {
     drawer: null,
     items: [
       { title: 'Home', icon: 'mdi-domain', to: '/' },
-      { title: 'Capsules', icon: 'mdi-image', to: '/capsules' },
-      { title: 'Rockets', icon: 'mdi-help-box', to: '/rockets' },
-      { title: 'Crew', icon: 'mdi-help-box', to: '/crew' }
+      { title: 'Capsules', icon: 'mdi-firework', to: '/capsules' },
+      { title: 'Rockets', icon: 'mdi-rocket-launch', to: '/rockets' },
+      { title: 'Crew', icon: 'mdi-microsoft-teams', to: '/crew' }
     ]
   })
 }

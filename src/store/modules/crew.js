@@ -15,7 +15,7 @@ const actions = {
       .catch(error => `FetchTeamList: There was an error fetching the data - ${error.message} - `)
     commit('setTeam', response)
   },
-  async fetchSingleMember({ commit, id }) {
+  async fetchSingleMember({ commit }, id) {
     const response = await fetch(`https://api.spacexdata.com/v4/crew/${id}`)
       .then(res => res.json())
       .catch(error => `FetchSingleMember: There was an error fetching the data - ${error.message} - `)
