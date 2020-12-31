@@ -7,6 +7,7 @@
 [![ui library: ant design](https://img.shields.io/badge/state_managment-Vuex-9fc)](https://github.com/vuejs/vuex)
 [![ui library: ant design](https://img.shields.io/badge/ui%20library-Vuetify-blue)](https://github.com/vuetifyjs/vuetify)
 [![deploy: gh pages](https://img.shields.io/badge/deploy-ghPages-black)](https://github.com/tschaub/gh-pages)
+[![licence](https://img.shields.io/badge/licence-MIT-success)](https://choosealicense.com/)
 
 This is a side project built with Vue2 with Vuetify as framework using the [SpaceX API](https://github.com/r-spacex/SpaceX-API)
 
