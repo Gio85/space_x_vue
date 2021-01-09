@@ -21,28 +21,52 @@
           </v-carousel-item>
         </v-carousel>
       </v-col>
-      <v-col sm="8" >
-        <p class="description">{{singleRocket.description}}</p>
+      <v-col sm="8">
+        <p class="description">{{ singleRocket.description }}</p>
         <v-container class="grey lighten-5 mb-6">
           <v-simple-table>
             <template v-slot:default>
               <tbody>
-              <tr v-for="(key, index) in Object.keys(singleRocket)" :key="index">
-                <td v-if="typeof singleRocket[key] !== 'object' && key !== 'image' && key !== 'status' && key !== 'id' && key !== 'name' && key !== 'description'">
-                  <strong>{{ key.toUpperCase() }}</strong>
-                </td>
-                <td v-if="typeof singleRocket[key] !== 'object' && key !== 'image' && key !== 'status' && key !== 'id' && key !== 'name' && key !== 'description'">
-                  {{ singleRocket[key] }}
-                </td>
-              </tr>
+                <tr v-for="(key, index) in Object.keys(singleRocket)" :key="index">
+                  <td
+                    v-if="
+                      typeof singleRocket[key] !== 'object' &&
+                        key !== 'image' &&
+                        key !== 'status' &&
+                        key !== 'active' &&
+                        key !== 'id' &&
+                        key !== 'name' &&
+                        key !== 'description'
+                    "
+                  >
+                    <strong>{{ key.toUpperCase() }}</strong>
+                  </td>
+                  <td
+                    v-if="
+                      typeof singleRocket[key] !== 'object' &&
+                        key !== 'image' &&
+                        key !== 'status' &&
+                        key !== 'active' &&
+                        key !== 'id' &&
+                        key !== 'name' &&
+                        key !== 'description'
+                    "
+                  >
+                    {{ singleRocket[key] }}
+                  </td>
+                  <td v-if="typeof singleRocket[key] !== 'object' && key === 'active'">
+                    <strong>{{ key.toUpperCase() }}</strong>
+                  </td>
+                  <td v-if="typeof singleRocket[key] !== 'object' && key === 'active'">
+                    {{ getStatus(singleRocket[key]) }}
+                  </td>
+                </tr>
               </tbody>
             </template>
           </v-simple-table>
         </v-container>
       </v-col>
-
     </v-row>
-
   </div>
 </template>
 
@@ -54,7 +78,13 @@ export default {
   computed: {
     ...mapGetters(['singleRocket'])
   },
-  methods: mapActions(['fetchRocket']),
+  methods: {
+    ...mapActions(['fetchRocket']),
+    getStatus(status) {
+      if (status) return '✅'
+      else return '❌'
+    }
+  },
   created() {
     this.fetchRocket(this.$route.params.id)
   },
