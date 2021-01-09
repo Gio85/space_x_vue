@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Crew from '@/views/CrewList'
 import CrewRead from '@/views/CrewRead'
-import Rockets from '@/components/features/Rockets'
-import RocketRead from '@/components/features/RocketRead'
+import Rockets from '@/views/RocketsList'
+import RocketRead from '@/views/RocketRead'
+import Capsules from '@/views/Capsules'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     name: 'RocketRead',
     component: RocketRead,
     props: true
+  },
+  {
+    path: '/capsules',
+    name: 'Capsules',
+    component: Capsules
   }
 ]
 
