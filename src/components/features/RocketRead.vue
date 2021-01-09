@@ -34,12 +34,6 @@
                 <td v-if="typeof singleRocket[key] !== 'object' && key !== 'image' && key !== 'status' && key !== 'id' && key !== 'name' && key !== 'description'">
                   {{ singleRocket[key] }}
                 </td>
-                <td v-if="key === 'status'">
-                  <strong>{{ key.toUpperCase() }}</strong>
-                </td>
-                <td v-if="key === 'status'">
-                  {{ singleRocket[key].toUpperCase() }}
-                </td>
               </tr>
               </tbody>
             </template>
