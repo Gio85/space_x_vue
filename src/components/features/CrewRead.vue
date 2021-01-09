@@ -1,9 +1,7 @@
 <template>
-  <div>
+  <v-container>
     <v-card class="mx-auto hasMarginTop" max-width="400">
-      <v-img class="white--text align-end" height="400px" :src="singleMember.image">
-        <v-card-title>{{ singleMember.name }}</v-card-title>
-      </v-img>
+      <v-img class="white--text align-end" height="400px" :src="singleMember.image"> </v-img>
     </v-card>
     <v-container class="grey lighten-5 mb-6">
       <v-simple-table>
@@ -20,14 +18,16 @@
                 <strong>{{ key.toUpperCase() }}</strong>
               </td>
               <td v-if="key === 'status'">
-                {{ singleMember[key].toUpperCase() }}
+                <v-chip :color="getColor(singleMember[key])" dark label>
+                  {{ singleMember[key].toUpperCase() }}
+                </v-chip>
               </td>
             </tr>
           </tbody>
         </template>
       </v-simple-table>
     </v-container>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -38,7 +38,13 @@ export default {
   computed: {
     ...mapGetters(['singleMember'])
   },
-  methods: mapActions(['fetchSingleMember']),
+  methods: {
+    ...mapActions(['fetchSingleMember']),
+    getColor(status) {
+      if (status === 'active') return 'green'
+      else return 'red'
+    }
+  },
   created() {
     this.fetchSingleMember(this.$route.params.id)
   },

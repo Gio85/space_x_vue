@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <v-container class="container">
     <v-row :justify="'space-around'">
       <v-col sm="8">
-        <h1>{{ singleRocket.name }}</h1>
+        <div v-if="!singleRocket">
+          <v-sheet :color="'grey lighten-4'" class="pa-3">
+            <v-skeleton-loader class="mx-auto" max-width="300" type="card"></v-skeleton-loader>
+          </v-sheet>
+        </div>
         <v-carousel cycle hide-delimiter-background show-arrows-on-hover>
           <template v-slot:prev="{ on, attrs }">
             <v-btn v-bind="attrs" v-on="on"><span class="arrowSize">⬅️</span></v-btn>
@@ -20,6 +24,7 @@
             </v-sheet>
           </v-carousel-item>
         </v-carousel>
+        <strong class="headline">{{ singleRocket.name }}</strong>
       </v-col>
       <v-col sm="8">
         <p class="description">{{ singleRocket.description }}</p>
@@ -39,7 +44,12 @@
                         key !== 'description'
                     "
                   >
-                    <strong>{{ key.toUpperCase() }}</strong>
+                    <strong>{{
+                      key
+                        .toUpperCase()
+                        .replace('_', ' ')
+                        .replace('_', ' ')
+                    }}</strong>
                   </td>
                   <td
                     v-if="
@@ -67,7 +77,7 @@
         </v-container>
       </v-col>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Rockets</h1>
+  <v-container class="container">
+    <h1 class="headline">Rockets</h1>
     <v-row :justify="'space-around'">
       <div v-for="rocket in rockets" :key="rocket.id">
         <v-col md="12">
@@ -15,7 +15,7 @@
         </v-col>
       </div>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
